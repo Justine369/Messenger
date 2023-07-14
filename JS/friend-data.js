@@ -7,7 +7,7 @@ const getOnlineFriends = async () => {
 
   const response = await fetch("userlist.php");
   const onlineFriends = await response.json();
-  // console.log(onlineFriends);
+  console.log(onlineFriends);
   
   if(onlineFriends.length > 0) {
     
