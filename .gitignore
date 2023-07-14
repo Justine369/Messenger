@@ -1,0 +1,8 @@
+# Ignore specific file
+secret.txt
+
+# Ignore files with a certain extension
+*.log
+
+# Ignore entire directory
+messenger/User-content/pfp/
