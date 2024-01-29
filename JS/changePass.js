@@ -3,7 +3,7 @@ const submitBTN = document.querySelector("input[type='submit']");
 const InputPass = document.querySelectorAll("input[type='password']");
 
 const err = document.querySelector('.PfpContainer .Err');
-const url = "../Request/changePass.php"
+const url = "./Request/changePass.php"
 
 form.addEventListener('submit', (e) => {
 

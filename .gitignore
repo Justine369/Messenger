@@ -5,4 +5,4 @@ secret.txt
 *.log
 
 # Ignore entire directory
-messenger/User-content/pfp/*
+User-content/pfp/*

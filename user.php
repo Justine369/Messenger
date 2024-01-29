@@ -9,10 +9,11 @@
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="refresh" content="10">
-        <meta name="keywords" content="HTML, CSS, JavaScript">
-        <meta name="description" content="Free Web tutorials">
-        <meta name="author" content="John Doe">
+        <meta name="keywords" content="Mensahe, Justine Bayron, Lelouch, Luciferous">
+        <meta name="description" content="Mensahe">
+        <meta name="author" content="Le Louche">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <base href="https://www.w3schools.com/" target="_blank"> -->
         <title>User List</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
         <link rel="stylesheet" type="text/css" href="CSS/style.css">

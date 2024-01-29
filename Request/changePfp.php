@@ -35,20 +35,21 @@
                 WHERE unique_id = '{$_SESSION['user']}'");
 
                 if ($sql) {
-
                     // Deleting the old Profile photo
                     if (file_exists($dir.$oldpfp)) {
                         unlink($dir.$oldpfp);
                     }
 
                 } else {
-                    $response['fileErr'] = "Couldn't upload your photo, try again later!";
+                    $response['fileErr'] = "Couldn't set your photo, try again later!";
                 }
+            } else {
+                $response['fileErr'] = "Couldn't upload your photo, try again later!";
             }
 
         }
          
-    }
+    } 
     
     if(!empty($_POST['name'])) {
         $sql2 = $con_DB->query("UPDATE users 

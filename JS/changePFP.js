@@ -5,7 +5,7 @@ const form = document.querySelector(".PfpContainer form");
 const file = document.querySelector(".PfpContainer input[type='file']");
 const fileUpload = document.querySelector(".PfpContainer input[type='submit']");
 const inputText = document.querySelectorAll("form input[type='text']");
-const url = '../Request/changePfp.php';
+const url = './Request/changePfp.php';
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
