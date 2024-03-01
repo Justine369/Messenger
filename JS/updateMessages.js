@@ -37,7 +37,7 @@ function fetchData() {
                     chatbox.appendChild(sendingdiv);
                     
                     const imgDiv = document.createElement('img');
-                    imgDiv.src = "../User-content/pfp/" + msg.img;
+                    imgDiv.src = "./User-content/pfp/" + msg.img;
                     sendingdiv.appendChild(imgDiv);
 
                     const detsdiv = document.createElement('div');
@@ -65,4 +65,4 @@ function fetchData() {
 }
 
 fetchData();
-setInterval(fetchData, 1000);
+// setInterval(fetchData, 1000);

@@ -1,8 +1,5 @@
 const userContainer = document.querySelector(".user-container");
 
-
-
-
 const getOnlineFriends = async () => {
 
   const response = await fetch("userlist.php");
@@ -22,7 +19,7 @@ const getOnlineFriends = async () => {
           const lastName = friend.lastname;
           const message = friend.message_text;
           const status = friend.status;
-          const img = "../User-content/pfp/" + friend.img;
+          const img = "./User-content/pfp/" + friend.img;
 
           const userDiv = document.createElement('div');
           userDiv.classList.add('user');
@@ -82,19 +79,5 @@ const getOnlineFriends = async () => {
 
 getOnlineFriends();
 
-// setInterval(getOnlineFriends, 5000);
-
-
-
-// setInterval(() => {
-//     let xmlhttp = new XMLHttpRequest();
-//     xmlhttp.open("POST", "userlist.php", true);
-//     xmlhttp.onreadystatechange = () => {
-//         if (xmlhttp.readyState === XMLHttpRequest.DONE && xmlhttp.status === 200) {
-//             let data = xmlhttp.response;
-//             lu.innerHTML = data;
-//         }
-//     };
-//     xmlhttp.send();
-// }, 1000)
+// setInterval(getOnlineFriends, 10000);
 

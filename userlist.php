@@ -1,13 +1,17 @@
 <?php
+    header("Cache-Control: no-store, no-cache, must-revalidate");
     session_start();
     include_once "config.php";
 
 
     //Checks the users(friends) other than user logged-in.
     $sqlGetUsers = $con_DB->query("SELECT * FROM users WHERE NOT unique_id = {$_SESSION['user']}");
-    
+    if (!$sqlGetUsers) {
+        die("Error in query: " . $con_DB->error);
+    }
     if ($sqlGetUsers->num_rows > 0) {
         $users = $sqlGetUsers->fetch_all(MYSQLI_ASSOC);
+
         $user_UniqueIDs = array_column($users, "unique_id");
         $user_UniqIDStr = implode(',', $user_UniqueIDs);
         $user_IDs = array_column($users, "user_id");

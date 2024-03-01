@@ -1,4 +1,5 @@
 <?php 
+    header("Cache-Control: no-store, no-cache, must-revalidate");
     session_start();
     if(!isset($_SESSION['user'])) {
         header("location: index.php");
@@ -13,7 +14,6 @@
         <meta name="description" content="Mensahe">
         <meta name="author" content="Le Louche">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- <base href="https://www.w3schools.com/" target="_blank"> -->
         <title>User List</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
         <link rel="stylesheet" type="text/css" href="CSS/style.css">
@@ -43,10 +43,10 @@
             </a>
         </div>
         <div class="search">
-            <input type="text" placeholder="Search for friends...">
+            <input type="text" placeholder="Search for friends..." id="searchBox">
         </div>
-        <div class="user-container">
-        </div>
+        <div class="user-container"></div>
+        <script src="./JS/search.js"></script>
         <script src="./JS/friend-data.js"></script>
     </body>
     </html>
