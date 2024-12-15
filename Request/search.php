@@ -14,14 +14,14 @@
 
     // echo json_encode(['text' => $text, 'word' => $words, 'mapped' => $mappedArray, 'result' => $result]);
 
-    $sql = "SELECT * FROM users WHERE firstname IN $result OR lastname IN $result";
+    $sql = "SELECT user_id, img, firstname, lastname FROM users WHERE firstname IN $result OR lastname IN $result";
     
     $result = $con_DB->query($sql);
 
     if ($result->num_rows > 0) {
-        $users = $result->fetch_assoc();
-        echo json_encode($users);
+        $users = $result->fetch_all(MYSQLI_ASSOC);
+        echo json_encode(['success' => true, 'users' => $users]);
     } else {
-        echo json_encode(['message' => 'error']);
+        echo json_encode(['success' => false]);
     }
 ?>

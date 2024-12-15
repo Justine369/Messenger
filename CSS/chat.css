@@ -43,6 +43,7 @@ body {
     margin: 0 15px;
     width: 60px;
     height: 60px;
+    object-fit: cover;
     border-radius: 50%;
     cursor: pointer;
 }
@@ -90,9 +91,13 @@ body {
 }
 
 .sending .details p {
-    background: #333;
+    background: #1e1e1e;
     color: #fff;
     border-radius: 18px 18px 0 18px;
+}
+
+.sending .details p.unseen {
+    background: #61686a;
 }
 
 .chat-box .receiving {
@@ -105,7 +110,7 @@ body {
     width: 45px;
     border-radius: 50%;
     margin-right: 10px;
-    
+    object-fit: cover;
 }
 .receiving .details {
     margin-right: auto;
@@ -120,6 +125,9 @@ body {
                 0 32px 64px -48px rgba(0, 0, 0, 0.5);
 }
 
+.receiving .details p.unseen {
+    background: #c8c9c9;
+}
 .chat-area .typing-area {
     display: flex;
     padding: 10px 30px;
@@ -136,6 +144,8 @@ body {
     outline: none;
 }
 
+
+
 .typing-area button {
     width: 55px;
     border: none;
@@ -147,3 +157,10 @@ body {
     border-radius: 0 5px 5px 0;
 }
 
+.status {
+    position: relative;
+    display: inline;
+    left: 365px;
+    font-size: 12px;
+    color:rgb(127, 165, 171);
+}

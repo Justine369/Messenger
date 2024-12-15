@@ -82,12 +82,20 @@ fileUpload.addEventListener('click', () => {
         })
         .then(response => response.json())
         .then(data => {
-            
             console.log(data);
+            if (data.success) {
+                err.style.display = 'block';
+                err.innerHTML = 'Successfully saved!';
+                err.style.display = 'block';
+                err.style.color = 'White';
+                err.style.backgroundColor = '#111716';
+                err.style.borderColor = '#004544';
 
-            if (Object.keys(data).length > 0) {
-                err.innerHTML = data[Object.keys(data)[0]];
-                
+                setTimeout(() => {
+                    window.location.href = '../user.php';
+                }, 1000);
+            } else {
+                err.innerHTML = data.err;
                 err.style.display = 'block';
                 err.style.backgroundColor = '#1d1d1d';
                 err.style.color ='rgb(223, 0, 0)';
@@ -96,18 +104,7 @@ fileUpload.addEventListener('click', () => {
                 setTimeout(() => {
                     err.style.display = 'none';
                 }, 5000);
-
-            } else {
-                err.innerHTML = 'Successfully saved!';
-                err.style.display = 'block';
-                err.style.color = 'White';
-                err.style.backgroundColor = '#111716';
-                err.style.borderColor = '#004544';
-
-
-                setTimeout(() => {
-                    err.style.display = 'none';
-                }, 5000);
+                
             }
         })
         .catch(error => console.log(JSON.stringify(error)));

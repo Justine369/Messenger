@@ -3,11 +3,10 @@
     session_start();
     include_once "../config.php";
 
-    $response = [];
+    $response = '';
 
 
     if (isset($_FILES['pfpUpload'])) {
-        
         //Get the old name of the profile pic from the server
         $oldpfp = '';
         $sql = $con_DB->query("SELECT img FROM users WHERE unique_id = {$_SESSION['user']}");
@@ -41,10 +40,11 @@
                     }
 
                 } else {
-                    $response['fileErr'] = "Couldn't set your photo, try again later!";
+                    $response = "Couldn't set your photo, try again later!";
                 }
+
             } else {
-                $response['fileErr'] = "Couldn't upload your photo, try again later!";
+                $response = "Something went wrong, couldn't change your profile!";
             }
 
         }
@@ -56,7 +56,7 @@
             SET firstname = '{$_POST['name']}'
             WHERE unique_id = '{$_SESSION['user']}'");
         if (!$sql2) {
-            $response['NameErr'] = "Something went wrong, couldn't change your name!";
+            $response = "Something went wrong, couldn't change your name!";
         }
     } 
     
@@ -65,7 +65,7 @@
         SET lastname = '{$_POST['surname']}'
         WHERE unique_id = '{$_SESSION['user']}'");
          if (!$sql3) {
-            $response['SurnameErr'] = "Something went wrong, couldn't change your surname!";
+            $response = "Couldn't update your surname, something went wrong!";
         }
     } 
     
@@ -74,14 +74,15 @@
             SET email = '{$_POST['email']}'
             WHERE unique_id = '{$_SESSION['user']}'");
              if (!$sql4) {
-                $response['EmailErr'] = "Something went wrong, couldn't change your email!";
+                $response = "Something went wrong, couldn't update!";
             }
     }
 
-    echo json_encode($response);
 
-    // if (!empty($response)) {
-    // }
+    if (empty($response)) {
+        echo json_encode(['success' => true]);
+    } else {
+        echo json_encode(['err' => $response, 'success' => false]);
+    }
 
-    
 ?>

@@ -1,15 +1,15 @@
 <?php 
-    header("Cache-Control: no-store, no-cache, must-revalidate");
     session_start();
     if(!isset($_SESSION['user'])) {
         header("location: index.php");
     }
+    header("Cache-Control: no-store, no-cache, must-revalidate");
 ?>
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
-        <meta http-equiv="refresh" content="10">
+        <!-- <meta http-equiv="refresh" content="40"> -->
         <meta name="keywords" content="Mensahe, Justine Bayron, Lelouch, Luciferous">
         <meta name="description" content="Mensahe">
         <meta name="author" content="Le Louche">
@@ -23,6 +23,7 @@
         <div class="wrapper">
             <?php
             include_once "config.php";
+            unset($_SESSION['user_id']);
             $user = $con_DB->query("SELECT * FROM users WHERE unique_id = {$_SESSION['user']}");
             if ($user->num_rows > 0) {
                 $row = $user->fetch_assoc();
@@ -42,8 +43,10 @@
                 <i class="fas fa-power-off"></i>
             </a>
         </div>
-        <div class="search">
+        <div class="search" id="searchDiv">
             <input type="text" placeholder="Search for friends..." id="searchBox">
+            <div class="searchResult">
+            </div>
         </div>
         <div class="user-container"></div>
         <script src="./JS/search.js"></script>

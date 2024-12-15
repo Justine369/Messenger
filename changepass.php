@@ -33,7 +33,7 @@
                         <p>This is an error! A fucking error!</p>
                     </div>
                     <div class="change-pass">
-                        <img src="../User-content/Pfp/<?php echo $user['img']?>" alt="<?php echo $user['firstname'] . $user['lastname']?>">
+                        <img src="./User-content/Pfp/<?php echo $user['img']?>" alt="<?php echo $user['firstname'] . $user['lastname']?>">
                     </div>
                     <h3>Change Password</h3>
                     <form action="#">

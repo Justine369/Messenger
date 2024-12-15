@@ -6,6 +6,8 @@ const form = document.querySelector(".typing-area");
 const textArea = document.querySelector(".typing-area input");
 const sendBtn = document.querySelector(".typing-area button");
 
+console.log('uid: ' +uid.innerText);
+
 // console.log(outgoing);
 form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -32,9 +34,18 @@ sendBtn.addEventListener("click", () => {
         const msgPara = document.createElement('p');
         msgPara.innerText = message;
         detsdiv.appendChild(msgPara);
+        
+        let removeSent = document.querySelector('.status');
+        if (removeSent) {
+            removeSent.remove();
+        }
+
+        const sent = document.createElement('div');
+        sent.className  = 'status';
+        sent.textContent = 'sending';
+        chatdiv.appendChild(sent);
 
         chatdiv.scrollTop = chatdiv.scrollHeight;
-
 
         const requestData = {
             user_id: user_id,
@@ -53,10 +64,9 @@ sendBtn.addEventListener("click", () => {
         body: JSON.stringify(requestData)
         })
         .then((response) => {
+            console.log(response);
             if (response.ok) {
                 textArea.value = ''; 
-                // return response.json();
-                // console.log(response.json);
             } else {
             throw new Error("Request failed.");
             }

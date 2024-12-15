@@ -101,6 +101,7 @@ body {
 .user img {
     width: 50px;
     height: 50px;
+    object-fit: cover;
     border-radius: 50%;
     margin-right: 10px;
     border: 0.5px solid rgba(112, 112, 112, 0.168);
@@ -116,8 +117,12 @@ body {
     color: #a9a9b4;
     font-size: 14px;
 }
-
+.user .unseen {
+    color: #67aea9;
+    font-size: 14px;
+}
 .search {
+    position: relative;
     width: 100%;
     margin: 25px 0;
     text-align: center;
@@ -132,8 +137,37 @@ body {
     padding: 18px;
 }
 
+.searchResult {
+    display: none;
+    position: absolute;
+    top: 39px;
+    left: 42px;
+    width: 80%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
 
 
+.searchUser {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+
+.searchUser img {
+    width: 25px;
+    height: 25px;
+    object-fit: cover;
+}
+
+.searchUser p {
+    display: inline;
+    position: relative;
+    top: -5px;
+    margin-left: 5px;
+}
 
 
 

@@ -1,5 +1,6 @@
 # Ignore specific file
 secret.txt
+config.php
 
 # Ignore files with a certain extension
 *.log

@@ -35,8 +35,8 @@ if (!isset($_SESSION['user'])) {
                     <p><?php echo $row['status']?></p>
                 </div>
             </header>
+            <div class="session_user" hidden><?php echo $_SESSION['user'] ?></div>
             <div class="chat-box">
-                <div class="session_user" hidden><?php echo $_SESSION['user'] ?></div>
                 <!-- <div class="chat sending">
                     <div class="details">
                         <p>Hi</p>
@@ -50,15 +50,16 @@ if (!isset($_SESSION['user'])) {
                 </div> -->
             </div>
             <form action="#" class="typing-area">
-                <input type="text" placeholder="Type a message here..." name="" id="" class="t">
+                <input type="text" placeholder="Type a message here..." name="" id="" class="inputMsg">
                 <button><i class="fab fa-telegram-plane"></i></button>
             </form>
         </section>
     </div>
-
+    
     <script src="./JS/updateMessages.js"></script>
-    <script src="./JS/messages.js"></script>
-
+    <script  src="./JS/messages.js"></script>
+    <script defer src="./JS/seen.js"></script>
+    
 
 </body>
 

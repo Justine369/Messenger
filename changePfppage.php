@@ -34,7 +34,7 @@
                     <p>This is an error! A fucking error!</p>
                 </div>
                 <div class="change-profile">
-                    <img src="../User-content/Pfp/<?php echo $user['img']?>" alt="">
+                    <img src="./User-content/Pfp/<?php echo $user['img']?>" alt="">
                     <label for="pfpUpload" >Select</label>
                 </div>
                 <form action="#" enctype="multipart/form-data">
@@ -46,9 +46,7 @@
                     <input type="submit" value="Save" name="Upload">
                 </form>
             </div>
-            
         </div>
-        
     </div>
     <script src="./JS/changePFP.js"></script>
 </body>
